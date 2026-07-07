@@ -16,15 +16,16 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - emacs
-      - neovim
-      - keepassxc
-      - syncthing
-      - easyeffects
-      - kitty
-      - git-delta
+      packages:
+        - emacs
+        - neovim
+        - keepassxc
+        - syncthing
+        - easyeffects
+        - kitty
+        - git-delta
   - type: default-flatpaks
     configurations:
       - notify: false
